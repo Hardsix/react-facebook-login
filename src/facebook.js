@@ -52,6 +52,7 @@ class FacebookLogin extends React.Component {
     onClick: PropTypes.func,
     containerStyle: PropTypes.object,
     buttonStyle: PropTypes.object,
+    children: React.PropTypes.node,
     tag: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   };
 
@@ -212,7 +213,7 @@ class FacebookLogin extends React.Component {
     return Object.assign(style, this.props.containerStyle);
   }
 
-  render() {
+  renderOwnButton() {
     const { cssClass, size, icon, textButton, typeButton, buttonStyle } = this.props;
     const isIconString = typeof icon === 'string';
     const optionalProps = {};
@@ -243,6 +244,11 @@ class FacebookLogin extends React.Component {
         {this.style()}
       </span>
     );
+  }
+
+  render() {
+    const { children } = this.props;
+    return children ? <span onClick={this.click}>{ children }</span> : this.renderOwnButton();
   }
 }
 

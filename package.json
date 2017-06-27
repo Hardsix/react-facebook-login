@@ -1,7 +1,7 @@
 {
-  "name": "react-facebook-login",
+  "name": "react-facebook-login-with-children",
   "version": "3.6.2",
-  "description": "A Component React for Facebook Login",
+  "description": "React Facebook login component forked from https://www.npmjs.com/package/react-facebook-login",
   "main": "dist/facebook-login.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development node_modules/.bin/webpack-dev-server --config webpack.config.js",
